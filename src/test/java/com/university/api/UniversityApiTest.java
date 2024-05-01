@@ -102,7 +102,7 @@ public class UniversityApiTest {
 		given().basePath(basePath).header("api_key", "f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e")
 		.header("content", "application/json").pathParam("unive rsityID", "university687")
 		.body(requestBody)
-		.when().put("/{unive rsityID}").then().log().all().statusCode(201);
+		.when().put("/{universityID}").then().log().all().statusCode(201);
 	}
 	
 	@Test
