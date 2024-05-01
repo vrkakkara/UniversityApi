@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "84af03f6-b6e8-465f-bfc8-4fc5c8028f2c",
+		"name": "University API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33885304"
+	},
+	"item": [
+		{
+			"name": "Get university details with name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4010/university?universityName=University of Toronto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4010",
+					"path": [
+						"university"
+					],
+					"query": [
+						{
+							"key": "universityName",
+							"value": "University of Toronto"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUniversity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "content",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Unive rsityID\": 1000,\r\n    \"UniversityName\": \"University of Delhi\",\r\n    \"UniversityLocation\": \"Toronto, Ontario, Canada\",\r\n    \"UniversityFounded\": 1965,\r\n    \"KeyPeople\": [\r\n        {\r\n            \"name\": \"John Smith\",\r\n            \"age\": 18,\r\n            \"title\": \"President\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4010/university",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4010",
+					"path": [
+						"university"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "{{token}}",
+							"disabled": true
+						},
+						{
+							"key": "content",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDeatilsWithID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "content",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_key",
+						"value": "f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:4010/:unive rsityID",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4010",
+					"path": [
+						":unive rsityID"
+					],
+					"variable": [
+						{
+							"key": "unive rsityID",
+							"value": "university687"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e",
+						"type": "text"
+					},
+					{
+						"key": "content",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Unive rsityID\": 1000,\r\n    \"UniversityName\": \"University of Delhi\",\r\n    \"UniversityLocation\": \"Mississauga, Ontario, Canada\",\r\n    \"UniversityFounded\": 1965,\r\n    \"KeyPeople\": [\r\n        {\r\n            \"name\": \"John Smith\",\r\n            \"age\": 18,\r\n            \"title\": \"President\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/:univer sityID",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						":univer sityID"
+					],
+					"variable": [
+						{
+							"key": "univer sityID",
+							"value": "978"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUniversity",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUniversityDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:4010/universities"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "f3c84cbb-1f9a-4b87-bb5b-2d1691b24e1e",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "http://localhost:4010/",
+			"type": "string"
+		}
+	]
+}
